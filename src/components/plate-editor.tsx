@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { cn } from '@udecode/cn';
 import { CommentsProvider } from '@udecode/plate-comments';
-import { Plate } from '@udecode/plate-common';
+import { Plate, Value } from '@udecode/plate-common';
 import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -46,7 +46,6 @@ export default function PlateEditor() {
             <FixedToolbar>
               <FixedToolbarButtons />
             </FixedToolbar>
-
             <Editor
               className="px-[96px] py-16"
               autoFocus
@@ -54,15 +53,11 @@ export default function PlateEditor() {
               variant="ghost"
               size="md"
             />
-
             <FloatingToolbar>
               <FloatingToolbarButtons />
             </FloatingToolbar>
-
             <MentionCombobox items={MENTIONABLES} />
-
             <CommentsPopover />
-
             <CursorOverlay containerRef={containerRef} />
           </div>
         </Plate>
