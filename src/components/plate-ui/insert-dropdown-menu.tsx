@@ -29,6 +29,7 @@ import { ELEMENT_CODE_BLOCK } from '@udecode/plate-code-block';
 import { ELEMENT_LINK } from '@udecode/plate-link';
 import { ELEMENT_TABLE } from '@udecode/plate-table';
 import { ELEMENT_HR } from '@udecode/plate-horizontal-rule';
+import { ELEMENT_DESMOS } from './desmos';
 
 const items = [
   {
@@ -116,6 +117,12 @@ const items = [
         label: 'Excalidraw',
         description: 'Excalidraw',
         icon: Icons.excalidraw,
+      },
+      {
+        value: ELEMENT_DESMOS,
+        label: 'Desmos',
+        description: 'Desmos',
+        icon: Icons.desmos,
       },
     ],
   },
