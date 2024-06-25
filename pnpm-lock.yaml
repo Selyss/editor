@@ -41,6 +41,9 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.0.7
         version: 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.55)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@types/desmos':
+        specifier: ^1.6.3
+        version: 1.6.3
       '@udecode/cn':
         specifier: ^29.0.1
         version: 29.0.1(@types/react@18.2.55)(class-variance-authority@0.7.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwind-merge@2.2.1)
@@ -1095,6 +1098,9 @@ packages:
 
   '@swc/helpers@0.5.6':
     resolution: {integrity: sha512-aYX01Ke9hunpoCexYAgQucEpARGQ5w/cqHFrIR+e9gdKb1QWTsVJuTJ2ozQzIAxLyRQe/m+2RqzkyOOGiMKRQA==}
+
+  '@types/desmos@1.6.3':
+    resolution: {integrity: sha512-OloA2cVc2dKAJhA1m8/pTWG3ZpM5Ks2rrRx146qNwFg4feQ6u+kBUOWuEcDC+gicxcZLjb4Gm1bUofcNG9C+vg==}
 
   '@types/is-hotkey@0.1.10':
     resolution: {integrity: sha512-RvC8KMw5BCac1NvRRyaHgMMEtBaZ6wh0pyPTBu7izn4Sj/AX9Y4aXU5c7rX8PnM/knsuUpC1IeoBkANtxBypsQ==}
@@ -4581,6 +4587,8 @@ snapshots:
   '@swc/helpers@0.5.6':
     dependencies:
       tslib: 2.6.2
+
+  '@types/desmos@1.6.3': {}
 
   '@types/is-hotkey@0.1.10': {}
 
