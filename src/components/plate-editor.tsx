@@ -31,37 +31,48 @@ export default function PlateEditor() {
     },
   ];
 
+  const [debugValue, setDebugValue] = useState<Value>(initialValue);
+
   return (
-    <DndProvider backend={HTML5Backend}>
-      <CommentsProvider users={commentsUsers} myUserId={myUserId}>
-        <Plate plugins={plugins} initialValue={initialValue}>
-          <div
-            ref={containerRef}
-            className={cn(
-              'relative',
-              // Block selection
-              '[&_.slate-start-area-left]:!w-[64px] [&_.slate-start-area-right]:!w-[64px] [&_.slate-start-area-top]:!h-4'
-            )}
+    <>
+      <DndProvider backend={HTML5Backend}>
+        <CommentsProvider users={commentsUsers} myUserId={myUserId}>
+          <Plate
+          plugins={plugins}
+          initialValue={initialValue}
+          onChange={(newValue) => {
+            setDebugValue(newValue);
+          }}
           >
-            <FixedToolbar>
-              <FixedToolbarButtons />
-            </FixedToolbar>
-            <Editor
-              className="px-[96px] py-16"
-              autoFocus
-              focusRing={false}
-              variant="ghost"
-              size="md"
-            />
-            <FloatingToolbar>
-              <FloatingToolbarButtons />
-            </FloatingToolbar>
-            <MentionCombobox items={MENTIONABLES} />
-            <CommentsPopover />
-            <CursorOverlay containerRef={containerRef} />
-          </div>
-        </Plate>
-      </CommentsProvider>
-    </DndProvider>
+            <div
+              ref={containerRef}
+              className={cn(
+                'relative',
+                // Block selection
+                '[&_.slate-start-area-left]:!w-[64px] [&_.slate-start-area-right]:!w-[64px] [&_.slate-start-area-top]:!h-4'
+              )}
+            >
+              <FixedToolbar>
+                <FixedToolbarButtons />
+              </FixedToolbar>
+              <Editor
+                className="px-[96px] py-16"
+                autoFocus
+                focusRing={false}
+                variant="ghost"
+                size="md"
+              />
+              <FloatingToolbar>
+                <FloatingToolbarButtons />
+              </FloatingToolbar>
+              <MentionCombobox items={MENTIONABLES} />
+              <CommentsPopover />
+              <CursorOverlay containerRef={containerRef} />
+            </div>
+          </Plate>
+        </CommentsProvider>
+      </DndProvider>
+      {JSON.stringify(debugValue)} {/* TODO: remove debug */}
+    </>
   );
 }
