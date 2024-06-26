@@ -31,18 +31,13 @@ export default function PlateEditor() {
     },
   ];
 
-  const [debugValue, setDebugValue] = useState<Value>(initialValue);
 
   return (
-    <>
       <DndProvider backend={HTML5Backend}>
         <CommentsProvider users={commentsUsers} myUserId={myUserId}>
           <Plate
           plugins={plugins}
           initialValue={initialValue}
-          onChange={(newValue) => {
-            setDebugValue(newValue);
-          }}
           >
             <div
               ref={containerRef}
@@ -72,7 +67,5 @@ export default function PlateEditor() {
           </Plate>
         </CommentsProvider>
       </DndProvider>
-      {JSON.stringify(debugValue)} {/* TODO: remove debug */}
-    </>
   );
 }
