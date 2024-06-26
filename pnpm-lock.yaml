@@ -237,6 +237,9 @@ importers:
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^4.1.1
         version: 4.1.1(prettier@3.2.5)
+      '@types/desmos':
+        specifier: ^1.6.3
+        version: 1.6.3
       '@types/node':
         specifier: ^20.11.16
         version: 20.11.16
